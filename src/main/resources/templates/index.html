@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwwthymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" th:hrel="@{webjars/bootstrap/css/bootstrap.min.css}"  />
+</head>
+<body>
+<div align="center">
+        <h1>Wellcome to List Manage</h1>
+
+        <h4> <a class="h2" th:href="@{/users}">Manage Users</a></h4>
+        <h4> <a class="h2" th:href="@{/students}">List Students</a></h4>
+        <h4> <a class="h2" th:href="@{/teachers}">List Teachers</a></h4>
+        <h4> <a class="h2" th:href="@{/groups}">List Groups</a></h4>
+        <h4> <a class="h2" th:href="@{/majors}">List Majors</a></h4>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwwthymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mangage users</title>
+    <link rel="stylesheet" type="text/css" th:hrel="@{webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div align="center">
+    <div><h2>List Teachers</h2></div>
+    <div>
+        <a th:href="@{/teachers/new}"> <h3> Add NewTeacher </h3> </a>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="alert-dark">
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Major</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <th:block th:each="teacher : ${listTeachers}">
+                <tr>
+                    <td>[[${teacher.ID_giangvien}]]</td>
+                    <td>[[${teacher.Hoten}]]</td>
+                    <td>[[${teacher.Ten}]]</td>
+                    <td>[[${teacher.Chuyennganh}]]</td>
+                    <td></td>
+                    <td>
+                        <a th:href="@{teachers/edit}">Edit</a>
+                        <a th:href="@{teachers/delete}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwwthymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mangage users</title>
+    <link rel="stylesheet" type="text/css" th:hrel="@{webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div align="center">
+    <div><h2>List Groups</h2></div>
+    <div>
+        <a th:href="@{/groups/new}"> <h3> Add NewGroup </h3> </a>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="alert-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Project</th>
+                <th>Teacher</th>
+                <th>Score</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <th:block th:each="group : ${listGroups}">
+                <tr>
+                    <td>[[${group.ID_nhom}]]</td>
+                    <td>[[${group.Sinhvien}]]</td>
+                    <td>[[${group.Detai}]]</td>
+                    <td>[[${group.giangvien}]]</td>
+                    <td>[[${group.Diem}]]</td>
+                    <td>
+                        <a th:href="@{groups/edit}">Edit</a>
+                        <a th:href="@{groups/delete}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+</body>
+</html>

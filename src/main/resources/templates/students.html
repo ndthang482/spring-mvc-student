@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwwthymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mangage users</title>
+    <link rel="stylesheet" type="text/css" th:hrel="@{webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div align="center">
+    <div><h2>List Students</h2></div>
+    <div>
+        <a th:href="@{/students/new}"> <h3> Add NewStudent </h3> </a>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="alert-dark">
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Phone_number</th>
+                <th>Major</th>
+                <th>Teacher</th>
+                <th>Project</th>
+                <th>Score</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <th:block th:each="student : ${listStudents}">
+                <tr>
+                    <td>[[${student.ID_sinhvien}]]</td>
+                    <td>[[${student.Hoten}]]</td>
+                    <td>[[${student.Ten}]]</td>
+                    <td>[[${student.Tuoi}]]</td>
+                    <td>[[${student.Sodienthoai}]]</td>
+                    <td>[[${student.Chuyennganh}]]</td>
+                    <td>[[${student.Giangvien}]]</td>
+                    <td>[[${student.Detai}]]</td>
+                    <td>[[${student.Diem}]]</td>
+                    <td>[[${student.TenDetai}]]</td>
+                    <td></td>
+                    <td>
+                        <a th:href="@{students/edit}">Edit</a>
+                        <a th:href="@{students/delete}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwwthymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Majors</title>
+    <link rel="stylesheet" type="text/css" th:hrel="@{webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div align="center">
+    <div><h2>List Majors</h2></div>
+    <div>
+        <a th:href="@{/majors/new}"> <h3> Add NewMajor </h3> </a>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="alert-dark">
+            <tr>
+                <th>ID</th>
+                <th>Fulltname</th>
+                <th>Age</th>
+                <th>Phone_number</th>
+                <th>Major</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <th:block th:each="major : ${listMajors}">
+                <tr>
+                    <td>[[${major.ID_chuyennganh}]]</td>
+                    <td>[[${major.HovaTen}]]</td>
+                    <td>[[${major.Tuoi}]]</td>
+                    <td>[[${major.Sodienthoai}]]</td>
+                    <td>[[${major.Chuyennganh}]]</td>
+                    <td></td>
+                    <td>
+                        <a th:href="@{majors/edit}">Edit</a>
+                        <a th:href="@{majors/delete}">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+</body>
+</html>
